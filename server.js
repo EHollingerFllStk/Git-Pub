@@ -17,13 +17,23 @@ app.get("/", (req, res) => {
 //     res.send(drinks)
 // })
 
+//Style and list drinks_index.ejs
 app.get("/drinks/", (req, res) => {
     res.render("drinks_index.ejs", {
         allDrinks: drinks
     })
 })
 
+//List of drinks in ordered list in drinks_index.js
+app.get("/drinks/:indexOfDrinksArray", (req, res) => {
+    res.render("drinks_show.ejs",[req.params.indexOfDrinksArray])  
+})
 
+// app.get("/drinks/:indexOfDrinksArray",(req, res)=> {
+//     res.render("show.ejs", {
+//         drink: drinks[req.params.indexOfDrinksArray]
+//     })
+// })
 
 // SET UP LISTEN
 app.listen(port, () => {
