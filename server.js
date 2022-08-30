@@ -29,11 +29,10 @@ app.get("/drinks/:indexOfDrinksArray", (req, res) => {
     res.render("drinks_show.ejs",[req.params.indexOfDrinksArray])  
 })
 
-// app.get("/drinks/:indexOfDrinksArray",(req, res)=> {
-//     res.render("show.ejs", {
-//         drink: drinks[req.params.indexOfDrinksArray]
-//     })
-// })
+app.get("/drinks/:id",(req, res)=> {
+    res.send(req.params.id) 
+ })
+ 
 
 // SET UP LISTEN
 app.listen(port, () => {
