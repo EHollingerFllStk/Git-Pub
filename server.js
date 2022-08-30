@@ -13,10 +13,16 @@ app.get("/", (req, res) => {
 })
 
 //Route for drink DB
+// app.get("/drinks/",(req, res) => {
+//     res.send(drinks)
+// })
 
-app.get("/drinks/",(req, res) => {
-    res.send(drinks)
+app.get("/drinks/", (req, res) => {
+    res.render("drinks_index.ejs", {
+        allDrinks: drinks
+    })
 })
+
 
 
 // SET UP LISTEN
