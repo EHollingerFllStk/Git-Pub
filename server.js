@@ -25,14 +25,17 @@ app.get("/drinks/", (req, res) => {
 })
 
 //List of drinks in ordered list in drinks_index.js
-app.get("/drinks/:indexOfDrinksArray", (req, res) => {
-    res.render("drinks_show.ejs",[req.params.indexOfDrinksArray])  
-})
+app.get("/drinks/:indexOfDrinksArray", (req, res)=>{
+    res.render('drinks_show.ejs', {
+      drink: drinks[req.params.indexOfDrinksArray],
+    })
+  });
 
 app.get("/drinks/:id",(req, res)=> {
     res.send(req.params.id) 
  })
- 
+
+ app.get("/drinks/:name")
 
 // SET UP LISTEN
 app.listen(port, () => {
