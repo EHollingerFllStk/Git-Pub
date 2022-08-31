@@ -1,4 +1,5 @@
 const drinks = require("./models/drinks.js")
+const foods = require("./models/foods.js")
 
 // REQUIRE DEPENDENCIES
 const express = require('express');
@@ -34,10 +35,29 @@ app.get("/drinks/:indexOfDrinksArray", (req, res)=>{
 app.get("/drinks/:id",(req, res)=> {
     res.send(req.params.id) 
  })
+//////Foods Routes
 
- app.get("/drinks/:name")
+app.get("/foods/", (req, res) => {
+    res.render("foods_index.ejs", {
+        allFoods: foods
+    })
+})
+
+//List of foods in ordered list in drinks_index.js
+app.get("/foods/:indexOfFoodsArray", (req, res)=>{
+    res.render('foods_show.ejs', {
+      food: foods[req.params.indexOfFoodsArray],
+    })
+  });
+
+app.get("/foods/:id",(req, res)=> {
+    res.send(req.params.id) 
+ })
+
+
 
 // SET UP LISTEN
 app.listen(port, () => {
     console.log("listening live", port)
 })
+

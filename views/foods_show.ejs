@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
+    <style  type="text/css">
         body {
             color: blanchedalmond;
-            background-color: steelblue;
+            background-color: green;
         }
     </style>
-    <title>Drinks</title>
+    <title>Foods</title>
 </head>
-
 <body>
     <h1>At foo bar</h1>
-    <h2>
-        <%= drink.name %>
-    </h2>
-    <h3>
-        <%= drink.price %>
-    </h3>
-    <img src=<%=drink.image+".jpg" %>>
-    <a href="/drinks/">See All Drinks</a>
+    <h2> <%= food.name %> </h2>
+    <h3> <%= food.price %> </h3>
+    <img src= <%= food.image+".jpg" %>>
+<a href="/foods/">See All Foods</a>
 </body>
-
 </html>
